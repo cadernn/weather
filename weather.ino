@@ -1,5 +1,8 @@
 #include <Wire.h>
 #include <dht11.h>
+#include <SD.h>
+
+File myFile;
 
 dht11 DHT11;
 #define DHT11PIN 22
@@ -35,22 +38,30 @@ int md;
 // so ...Temperature(...) must be called before ...Pressure(...).
 long b5; 
 
+String inputString = "";         // 用于保存输入数据的字符串
+boolean stringComplete = false;  // 字符串是否已接收完全
+
 
 void setup()
 {
   Serial.begin(9600);
   Serial2.begin(115200);
   Serial3.begin(9600);
+  sd_begin();
   Wire.begin();
   bmp085Calibration(); 
   pinMode(1,INPUT);
+  
 }
 int t;
 
 void loop()
 {
  seneor_work();//function in the sensor.ino
+
+ sd_write();
  
+
  post_temperature();
  post_press();
  post_lx();
@@ -58,10 +69,12 @@ void loop()
  post_dir();
  post_wind();
  
- for(t=0;t<=300;t++)
+
+ for(t=0;t<=10;t++)
   {
     delay(1000); 
   }
+  
 }
 
 

@@ -1,3 +1,5 @@
+
+   
  #include <stdio.h>;  
  #include <math.h>  
    
@@ -10,7 +12,7 @@
     "POST /v1.0/device/8187/sensor/aaaaa/datapoints HTTP/1.1\r\n"
     "Host: api.yeelink.net\r\n"
     "Accept: */*\r\n"
-    "U-ApiKey: f92************************b2b42\r\n"
+    "U-ApiKey: **********************************\r\n"
     "Content-Length: dt\r\n"
     "Content-Type: application/x-www-form-urlencoded\r\n"
     "Connection: close\r\n"
@@ -22,7 +24,7 @@
     "POST /v1.0/device/8187/sensor/aaaaa/datapoints HTTP/1.1\r\n"
     "Host: api.yeelink.net\r\n"
     "Accept: */*\r\n"
-    "U-ApiKey: f92************************b2b42\r\n"
+    "U-ApiKey: f92382be7580d7107ad9b6bc04bb2b42\r\n"
     "Content-Length: dt\r\n"
     "Content-Type: application/x-www-form-urlencoded\r\n"
     "Connection: close\r\n"
